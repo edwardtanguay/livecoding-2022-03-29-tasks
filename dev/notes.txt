@@ -3,8 +3,9 @@
 	- x make js file and connect to HTML
 	- x read in contentElem as variable
 	- x save json as a javascript object https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/json/employees.json
+	- .. install sass
 	- .. iterate through js object, create DOM elements with string literals, put in innerHTML in contentElem
-		- fn ln
-		- address
-		- notes
+		- x fn ln
+		- x address
+		- x notes
 		- Territories: nnn, nnn, nnn, nnn, nnn, nnn

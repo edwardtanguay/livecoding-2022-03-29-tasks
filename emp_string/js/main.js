@@ -7,6 +7,12 @@ employees.forEach(employee => {
 	contentElem.innerHTML += `
 	<div class="employee">
 		<div class="name">${employee.firstName} ${employee.lastName}</div>	
+		<div class="address">
+			<div class="street">${employee.address.street}</div>	
+			<div class="cityState">${employee.address.city}, ${employee.address.region} ${employee.address.postalCode}</div>
+			<div class="country">${employee.address.country}</div>
+			<div class="notes">${employee.notes}</div>
+		</div>
 	</div>
 	`;
 });
