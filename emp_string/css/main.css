@@ -14,7 +14,13 @@ body {
 }
 
 .employee .notes {
+  margin-top: 5px;
   font-size: .6rem;
   font-style: italic;
+}
+
+.employee .territories {
+  margin-top: 5px;
+  font-size: .6rem;
 }
 /*# sourceMappingURL=main.css.map */
