@@ -2,56 +2,40 @@ const contentElem = document.querySelector('.content');
 
 const employees = getEmployees();
 
-// create content with createElement and appendChild
 employees.forEach(employee => {
-	const employeeElement = document.createElement('div');
-	// employeeElement.classList.add('employee');
-	employeeElement.className = 'employee';
-	contentElem.appendChild(employeeElement);
+	contentElem.innerHTML += `
+	<div class="employee">
+		<div class="name">${employee.firstName} ${employee.lastName}</div>
+		<div class="address">
+			<div class="street">${employee.address.street}</div>	
+			<div class="cityState">${employee.address.city}, ${employee.address.region} ${employee.address.postalCode}</div>
+			<div class="country">${employee.address.country}</div>
+		</div>
+		<div class="notes">${employee.notes}</div>
+		<div class="territories">Territory codes: ${employee.territoryIDs.join(', ')}</div>
+	</div>
+	`;
+});
+contentElem.innerHTML = `<div class="employees">${contentElem.innerHTML}</div>`;
+contentElem.innerHTML = `There are ${employees.length} employees<hr/>` + contentElem.innerHTML + '<button class="btnShowEmployees">Show Employees</button>';
 
-	const nameElem = document.createElement('div');
-	nameElem.className = 'name';
-	nameElem.innerText = employee.firstName + ' ' + employee.lastName;
-	employeeElement.appendChild(nameElem);
+const employeesElem = document.querySelector('.employees');
+employeesElem.style.display = 'none';
 
-	const addressElem = document.createElement('div');
-	addressElem.className = 'address';
-	// addressElem.style.display = 'none';
-	employeeElement.appendChild(addressElem);
-
-	const streetElem = document.createElement('div');
-	streetElem.className = 'street';
-	streetElem.innerText = employee.address.street; 
-	addressElem.appendChild(streetElem);
-
-	nameElem.addEventListener('click', () => {
-		// addressElem.style.display = addressElem.style.display !== 'none' ? 'none' : 'block'; 
-		addressElem.classList.toggle('address');
-	});
-
+const btnShowEmployeesElem = document.querySelector('.btnShowEmployees');
+btnShowEmployeesElem.addEventListener('click', () => {
+	employeesElem.style.display = 'block';
+	btnShowEmployeesElem.style.display = 'none';
 });
 
 
-// contentElem.innerHTML = `<div class="employees">${contentElem.innerHTML}</div>`;
-// contentElem.innerHTML = `There are ${employees.length} employees<hr/>` + contentElem.innerHTML + '<button class="btnShowEmployees">Show Employees</button>';
-
-// const employeesElem = document.querySelector('.employees');
-// employeesElem.style.display = 'none';
-
-// const btnShowEmployeesElem = document.querySelector('.btnShowEmployees');
-// btnShowEmployeesElem.addEventListener('click', () => {
-// 	employeesElem.style.display = 'block';
-// 	btnShowEmployeesElem.style.display = 'none';
-// });
-
-
-// const nameElems = document.querySelectorAll('.employee .name');
-// nameElems.forEach(nameElem => {
-// 	nameElem.addEventListener('click', () => {
-// 		const addressElem = nameElem.nextElementSibling;
-// 		addressElem.style.display = addressElem.style.display === 'block' ? 'none' : 'block';
-// 	});
-// });
+const nameElems = document.querySelectorAll('.employee .name');
+nameElems.forEach(nameElem => {
+	nameElem.addEventListener('click', () => {
+		const addressElem = nameElem.nextElementSibling;
+		addressElem.style.display = addressElem.style.display === 'block' ? 'none' : 'block';
+	});
+});
 
 
 

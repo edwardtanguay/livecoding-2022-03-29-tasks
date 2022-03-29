@@ -1,4 +1,4 @@
-- .. Use innerHTML und string literals to create employee cards from the Northwind database
+- x Use innerHTML und string literals to create employee cards from the Northwind database
 	- x build html page with <div class="content"></div>
 	- x make js file and connect to HTML
 	- x read in contentElem as variable
@@ -10,5 +10,9 @@
 		- x notes
 		- x Territories: nnn, nnn, nnn, nnn, nnn, nnn
 	- x hide address
-	- .. test click on name
-	- click on name to toggle address
+	- x test click on name
+	- x click on name to toggle address
+
+	- .. Use createElement and appendChild to create employee cards from the Northwind database
+
+		- jakob: error when createElement/appendchild is sent through strings
