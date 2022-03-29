@@ -2,11 +2,10 @@ const contentElem = document.querySelector('.content');
 
 const employees = getEmployees();
 
-contentElem.innerHTML = `There are ${employees.length} employees<hr/>`;
 employees.forEach(employee => {
 	contentElem.innerHTML += `
 	<div class="employee">
-		<div class="name">${employee.firstName} ${employee.lastName}</div>	
+		<div class="name">${employee.firstName} ${employee.lastName}</div>
 		<div class="address">
 			<div class="street">${employee.address.street}</div>	
 			<div class="cityState">${employee.address.city}, ${employee.address.region} ${employee.address.postalCode}</div>
@@ -17,6 +16,18 @@ employees.forEach(employee => {
 	</div>
 	`;
 });
+contentElem.innerHTML = `<div class="employees">${contentElem.innerHTML}</div>`;
+contentElem.innerHTML = `There are ${employees.length} employees<hr/>` + contentElem.innerHTML + '<button class="btnShowEmployees">Show Employees</button>';
+
+const employeesElem = document.querySelector('.employees');
+employeesElem.style.display = 'none';
+
+const btnShowEmployeesElem = document.querySelector('.btnShowEmployees');
+btnShowEmployeesElem.addEventListener('click', () => {
+	employeesElem.style.display = 'block';
+	btnShowEmployeesElem.style.display = 'none';
+});
+
 
 const nameElems = document.querySelectorAll('.employee .name');
 nameElems.forEach(nameElem => {
