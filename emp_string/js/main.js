@@ -21,8 +21,9 @@ employees.forEach(employee => {
 const nameElems = document.querySelectorAll('.employee .name');
 nameElems.forEach(nameElem => {
 	nameElem.addEventListener('click', () => {
-		alert('ok');
-	})
+		const addressElem = nameElem.nextElementSibling;
+		addressElem.style.display = addressElem.style.display === 'block' ? 'none' : 'block';
+	});
 });
 
 
