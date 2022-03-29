@@ -11,13 +11,19 @@ employees.forEach(employee => {
 			<div class="street">${employee.address.street}</div>	
 			<div class="cityState">${employee.address.city}, ${employee.address.region} ${employee.address.postalCode}</div>
 			<div class="country">${employee.address.country}</div>
-			<div class="notes">${employee.notes}</div>
-			<div class="territories">Territory codes: ${employee.territoryIDs.join(', ')}</div>
 		</div>
+		<div class="notes">${employee.notes}</div>
+		<div class="territories">Territory codes: ${employee.territoryIDs.join(', ')}</div>
 	</div>
 	`;
 });
 
+const nameElems = document.querySelectorAll('.employee .name');
+nameElems.forEach(nameElem => {
+	nameElem.addEventListener('click', () => {
+		alert('ok');
+	})
+});
 
 
 

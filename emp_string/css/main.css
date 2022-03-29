@@ -11,6 +11,11 @@ body {
 
 .employee .name {
   color: brown;
+  cursor: pointer;
+}
+
+.employee .address {
+  display: none;
 }
 
 .employee .notes {

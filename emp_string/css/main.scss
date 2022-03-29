@@ -9,6 +9,10 @@ body {
 	border-radius: 5px;
 	.name {
 		color: brown;
+		cursor: pointer;
+	}
+	.address {
+		display: none;
 	}
 	.notes {
 		margin-top: 5px;
